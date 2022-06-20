@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Bienvenido #{loginController.clienteTO.nombre} a CHIQUITINAS ON-LINE
+        <h:form>
+
+            <p:dataTable var="orden" value="#{OrdenController.listaOrdenes}" 
+                         paginator="true"
+                         rows="10"
+                         paginatorPosition="top"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="3,5,10,20,30,40,50,100"
+                         reflow="true"
+                         emptyMessage="No existen clientes registrados" >
+
+                <p:column headerText="Identificador" filterBy="#{orden.idOrden}" sortBy="#{orden.idOrden}"
+                          filterMatchMode="exact" filterStyle="width:90%">
+                    <h:outputText value="#{orden.idOrden}" />
+                </p:column>
+
+                <p:column headerText="Fecha de Orden" filterBy="#{orden.fechaOrden}" sortBy="#{orden.fechaOrden}"
+                          filterMatchMode="contains" filterStyle="width:90%">
+                    <h:outputText value="#{orden.fechaOrden}" />
+                </p:column>
+
+                <p:column headerText="Monto Total" filterBy="#{orden.montoTotal}" sortBy="#{orden.montoTotal}"
+                          filterMatchMode="contains" filterStyle="width:90%" >
+                    <h:outputText value="#{orden.montoTotal}" />
+                </p:column>
+
+                <p:column headerText="Cliente" filterBy="#{orden.idCliente}" sortBy="#{orden.idCliente}"
+                          filterMatchMode="contains" filterStyle="width:90%" >
+                    <h:outputText value="#{orden.idCliente}" />
+                </p:column>
+                
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,15 @@
+{
+    "elements": {
+        "p:messages": {},
+        "p:inputText": {},
+        "p:autoUpdate": {},
+        "p:commandButton": {},
+        "p:password": {},
+        "p:growl": {},
+        "h:form": {},
+        "p:panelGrid": {}
+    },
+    "attributes": {
+        "actionListener": {}
+    }
+}
